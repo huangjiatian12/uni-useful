@@ -1,5 +1,5 @@
 /**
- * 
+ * * js生成矩阵
  * @param {number} m 横
  * @param {number} n 纵
  * @param {any} value 默认值
