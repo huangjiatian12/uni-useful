@@ -17,10 +17,10 @@ export function createMatrix(m, n, value = 0) {
 export function deepClone(obj) {
   let newObj = Array.isArray(obj) ? [] : {}
   for (let i in obj) {
-    if (typeof obj[i] === "object") {
-      newObj[i] = deepClone(obj[i])
-    } else {
+    if (typeof obj[i] !== "object" || typeof obj[i] == null) {
       newObj[i] = obj[i]
+    } else {
+      newObj[i] = deepClone(obj[i])
     }
   }
   return newObj
