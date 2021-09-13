@@ -11,7 +11,7 @@ export function createMatrix(m, n, value = 0) {
 
 /**
  * 
- * @param {object | array} obj 克隆数据
+ * @param {any} obj 克隆数据
  * @returns 
  */
 export function deepClone(obj) {
