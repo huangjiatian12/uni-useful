@@ -8,3 +8,20 @@
 export function createMatrix(m, n, value = 0) {
   return new Array(n).fill().map(() => new Array(m).fill(value))
 }
+
+/**
+ * 
+ * @param {object | array} obj 克隆数据
+ * @returns 
+ */
+export function deepClone(obj) {
+  let newObj = Array.isArray(obj) ? [] : {}
+  for (let i in obj) {
+    if (typeof obj[i] === "object") {
+      newObj[i] = deepClone(obj[i])
+    } else {
+      newObj[i] = obj[i]
+    }
+  }
+  return newObj
+}
