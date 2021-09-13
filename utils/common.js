@@ -15,13 +15,18 @@ export function createMatrix(m, n, value = 0) {
  * @returns 
  */
 export function deepClone(obj) {
+  if (typeof obj !== 'object') return obj;
+  if (obj.constructor === Date) return new Date(obj);
+  if (obj.constructor === RegExp) return new RegExp(obj);
   let newObj = Array.isArray(obj) ? [] : {}
-  for (let i in obj) {
-    let itm = obj[i]
-    if (typeof itm !== "object" || typeof itm === null || typeof itm === undefined) {
-      newObj[i] = itm
-    } else {
-      newObj[i] = deepClone(itm)
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      let itm = obj[key]
+      if (typeof itm !== "object" || typeof itm === null || typeof itm === undefined) {
+        newObj[key] = itm
+      } else {
+        newObj[key] = deepClone(itm)
+      }
     }
   }
   return newObj
