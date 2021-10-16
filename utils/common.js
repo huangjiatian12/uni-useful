@@ -38,17 +38,17 @@ export function deepClone(obj) {
 
 export function checkType(value) {
   const types = {
-    "[object Number]": "Number",
-    "[object String]": "String",
-    "[object Boolean]": "Boolean",
-    "[object Undefined]": "Undefined",
-    "[object Null]": "Null",
-    "[object Object]": "Object",
-    "[object Array]": "Array",
-    "[object Date]": "Date",
-    "[object Error]": "Error",
-    "[object RegExp]": "RegExp",
-    "[object Function]": "Function",
+    "[object Number]": "number",
+    "[object String]": "string",
+    "[object Boolean]": "boolean",
+    "[object Undefined]": "undefined",
+    "[object Null]": "null",
+    "[object Object]": "object",
+    "[object Array]": "array",
+    "[object Date]": "date",
+    "[object Error]": "error",
+    "[object RegExp]": "regExp",
+    "[object Function]": "function",
   }
   let type = Object.prototype.toString.call(value)
   return types[type]
