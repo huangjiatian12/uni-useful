@@ -31,3 +31,25 @@ export function deepClone(obj) {
   }
   return newObj
 }
+
+/**
+ * * 判断变量类型
+ */
+
+export function checkType(value) {
+  const types = {
+    "[object Number]": "Number",
+    "[object String]": "String",
+    "[object Boolean]": "Boolean",
+    "[object Undefined]": "Undefined",
+    "[object Null]": "Null",
+    "[object Object]": "Object",
+    "[object Array]": "Array",
+    "[object Date]": "Date",
+    "[object Error]": "Error",
+    "[object RegExp]": "RegExp",
+    "[object Function]": "Function",
+  }
+  let type = Object.prototype.toString.call(value)
+  return types[type]
+}
